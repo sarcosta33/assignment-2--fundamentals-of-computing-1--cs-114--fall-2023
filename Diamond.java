@@ -12,21 +12,18 @@ public class Diamond {
 
     int sizeHalf = size/2;
 
-    // if size enetered is even
     if(size % 2 == 0){
 
-      // Calculates number of spaces and stars
-      for(int i = 0; i <= size - 1; i++){
-        int numSpaces = Math.abs(sizeHalf - i); //CHANGE FOR EVEN
-        int numStars = 2 * (sizeHalf - numSpaces) + 1;
+      for(int counter = 0; counter <= size - 1; counter++){
+        // divides enetered size in half and subtracts from ...
+        int numSpaces = Math.abs(sizeHalf - counter);
+        int numStars = 2 * (sizeHalf - numSpaces) + 1; //explain
 
-        // Prints spaces before star
-        for(int a = 0; a < numSpaces; a++){
+        for(int spaces = 0; spaces < numSpaces; spaces++){
           System.out.print(" ");
         }
 
-        // Prints star on each row
-        for(int b = 0; b < numStars - 1; b++){
+        for(int stars = 0; stars < numStars - 1; stars++){
           System.out.print("* ");
         }
 
@@ -35,26 +32,23 @@ public class Diamond {
       }
     }
 
-    // if size entered is odd
     else{
 
-      // Calculates number of spaces and stars
-      for(int i = 0; i < size; i++){
-        int numSpaces = Math.abs(sizeHalf - i);
-        int numStars = 2 * (sizeHalf - numSpaces) + 1;
+      for(int counter = 0; counter < size; counter++){
+        int numSpaces = Math.abs(sizeHalf - counter);
+        int numStars = 2 * (sizeHalf - numSpaces) + 1; //comment here explaining
 
-        // Prints spaces before star
-        for(int a = 0; a < numSpaces; a++){
+        for(int spaces = 0; spaces < numSpaces; spaces++){
           System.out.print(" ");
         }
 
-        // Prints star on each row
-        for(int b = 0; b < numStars; b++){
+        for(int stars = 0; stars < numStars; stars++){
           System.out.print("*");
         }
 
         // Moves to next line
         System.out.println();
+
         }
       }
   }
