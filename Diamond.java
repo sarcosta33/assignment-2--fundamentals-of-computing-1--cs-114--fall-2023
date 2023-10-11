@@ -14,17 +14,38 @@ public class Diamond {
 
     if(size % 2 == 0){
 
-      for(int counter = 0; counter <= size - 1; counter++){
-        // divides enetered size in half and subtracts from ...
-        int numSpaces = Math.abs(sizeHalf - counter);
-        int numStars = 2 * (sizeHalf - numSpaces) + 1; //explain
+      for(int counter = 0; counter <= size; counter++){
 
+        int numSpaces = Math.abs(sizeHalf - counter);
+        int numStars = 2 * (sizeHalf - numSpaces) + 1;
+
+        // prints first and last star
+        if(counter == 0){
+          numSpaces = size - 1; // fix this algorithm
+          for(int firstSpaces = 0; firstSpaces < numSpaces; firstSpaces++){
+            System.out.print(" ");
+          }
+          // prints first star
+          System.out.print("*");
+          }
+        else
+          if(counter == size) {
+            numSpaces = size - 1;
+            for(int lastSpaces = 0; lastSpaces < numSpaces; lastSpaces++){
+              System.out.print(" ");
+            }
+            // prints last star
+            System.out.print("*");
+            }
+
+        // prints middle part of diamond
         for(int spaces = 0; spaces < numSpaces; spaces++){
-          System.out.print(" ");
+          System.out.print("  ");
         }
 
         for(int stars = 0; stars < numStars - 1; stars++){
           System.out.print("* ");
+
         }
 
         // Moves to next line
@@ -35,8 +56,9 @@ public class Diamond {
     else{
 
       for(int counter = 0; counter < size; counter++){
+
         int numSpaces = Math.abs(sizeHalf - counter);
-        int numStars = 2 * (sizeHalf - numSpaces) + 1; //comment here explaining
+        int numStars = 2 * (sizeHalf - numSpaces) + 1;
 
         for(int spaces = 0; spaces < numSpaces; spaces++){
           System.out.print(" ");
