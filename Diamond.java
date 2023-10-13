@@ -10,55 +10,55 @@ public class Diamond {
     size = scan.nextInt();
     scan.close();
 
-    int sizeHalf = size/2;
+    int midpoint = size/2;
 
     if(size % 2 == 0){
 
-      for(int counter = 0; counter <= size; counter++){
+      for(int row = 0; row <= size; row++){
 
-        int numSpaces = Math.abs(sizeHalf - counter);
-        int numStars = 2 * (sizeHalf - numSpaces) + 1;
+        // Calculates number of spaces and stars for each row
+        int numSpaces = Math.abs(midpoint - row);
+        int numStars = 2 * (midpoint - numSpaces) + 1;
 
-        // prints first and last star
-        if(counter == 0){
-          numSpaces = size - 1; // fix this algorithm
-          for(int firstSpaces = 0; firstSpaces < numSpaces; firstSpaces++){
+        // Always prints first star with spaces before in even diamond
+        if(row == 0){
+          numSpaces = size - 1;
+          for(int firstRowSpaces = 0; firstRowSpaces < numSpaces; firstRowSpaces++){
             System.out.print(" ");
           }
-          // prints first star
           System.out.print("*");
           }
+
+        // Always prints last star with spaces before in even diamond
         else
-          if(counter == size) {
+          if(row == size) {
             numSpaces = size - 1;
-            for(int lastSpaces = 0; lastSpaces < numSpaces; lastSpaces++){
+            for(int lastRowSpaces = 0; lastRowSpaces < numSpaces; lastRowSpaces++){
               System.out.print(" ");
             }
-            // prints last star
             System.out.print("*");
             }
 
-        // prints middle part of diamond
-        for(int spaces = 0; spaces < numSpaces; spaces++){
+        for(int middleRowSpaces = 0; middleRowSpaces < numSpaces; middleRowSpaces++){
           System.out.print("  ");
         }
 
-        for(int stars = 0; stars < numStars - 1; stars++){
+        for(int middleRowStars = 0; middleRowStars < numStars - 1; middleRowStars++){
           System.out.print("* ");
-
         }
 
-        // Moves to next line
+        // Moves to next row
         System.out.println();
       }
-    }
+  }
 
     else{
 
-      for(int counter = 0; counter < size; counter++){
+      for(int row = 0; row < size; row++){
 
-        int numSpaces = Math.abs(sizeHalf - counter);
-        int numStars = 2 * (sizeHalf - numSpaces) + 1;
+        // Calculates number of spaces and stars for each row
+        int numSpaces = Math.abs(midpoint - row);
+        int numStars = 2 * (midpoint - numSpaces) + 1;
 
         for(int spaces = 0; spaces < numSpaces; spaces++){
           System.out.print(" ");
@@ -68,10 +68,10 @@ public class Diamond {
           System.out.print("*");
         }
 
-        // Moves to next line
+        // Moves to next row
         System.out.println();
 
-        }
       }
+    }
   }
 }
