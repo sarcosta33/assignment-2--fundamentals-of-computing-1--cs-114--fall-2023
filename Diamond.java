@@ -12,6 +12,7 @@ public class Diamond {
 
     int midpoint = size/2;
 
+    // Even size diamond
     if(size % 2 == 0){
 
       for(int row = 0; row <= size; row++){
@@ -20,16 +21,16 @@ public class Diamond {
         int numSpaces = Math.abs(midpoint - row);
         int numStars = 2 * (midpoint - numSpaces) + 1;
 
-        // Always prints first star with spaces before in even diamond
+        // Always prints first star with spaces before the star
         if(row == 0){
           numSpaces = size - 1;
           for(int firstRowSpaces = 0; firstRowSpaces < numSpaces; firstRowSpaces++){
             System.out.print(" ");
           }
           System.out.print("*");
-          }
+        }
 
-        // Always prints last star with spaces before in even diamond
+        // Always prints last star with spaces before the star
         else
           if(row == size) {
             numSpaces = size - 1;
@@ -37,7 +38,7 @@ public class Diamond {
               System.out.print(" ");
             }
             System.out.print("*");
-            }
+        }
 
         for(int middleRowSpaces = 0; middleRowSpaces < numSpaces; middleRowSpaces++){
           System.out.print("  ");
@@ -50,8 +51,9 @@ public class Diamond {
         // Moves to next row
         System.out.println();
       }
-  }
+    }
 
+    // Odd size diamond
     else{
 
       for(int row = 0; row < size; row++){
@@ -70,7 +72,6 @@ public class Diamond {
 
         // Moves to next row
         System.out.println();
-
       }
     }
   }
